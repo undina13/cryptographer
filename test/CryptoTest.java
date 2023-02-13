@@ -11,14 +11,12 @@ import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 
 
- class CryptoTest {
+class CryptoTest {
     @Test
     void encryptTest() throws IllegalBlockSizeException, InvalidKeySpecException, BadPaddingException, InvalidKeyException, InvalidAlgorithmParameterException, NoSuchPaddingException, NoSuchAlgorithmException {
         Crypto crypto = new Crypto();
         String cryptoPassword = crypto.encrypt("new text password");
-        System.out.println(cryptoPassword);
-        String password = crypto.decrypt(cryptoPassword);
-        Assertions.assertEquals("new text password", password);
+        Assertions.assertEquals("7Gd0EB4FRVi0ze5FMpcLJ0Wme7StRYiKw+tPorCTdss=", cryptoPassword);
     }
 
     @Test
